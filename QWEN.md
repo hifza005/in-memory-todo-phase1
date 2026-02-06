@@ -208,3 +208,23 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Key Implementation Decisions for Enhanced Todo Features
+
+During the implementation of the enhanced todo features, the following key decisions were made:
+
+1. **Data Model Extension**: Extended the existing task dictionary to include 'priority' and 'tags' fields while maintaining backward compatibility with existing functionality.
+
+2. **Priority Representation**: Implemented priority as a string field with values "High", "Medium", "Low" with support for shorthand notation (H/M/L, 1/2/3) for user convenience.
+
+3. **Tagging System**: Implemented tags as a list of strings to allow multiple tags per task, with comma-separated input parsing for ease of use.
+
+4. **Search Functionality**: Implemented case-insensitive substring search across both title and description fields for comprehensive search capability.
+
+5. **Filtering Approach**: Created a flexible filter function that supports filtering by status, priority, and tags individually or in combination.
+
+6. **Sorting Mechanism**: Implemented multiple sorting options (by priority, title, ID) with priority sorting following High→Medium→Low order.
+
+7. **UI Consistency**: Maintained the existing UI patterns and error handling while extending functionality to ensure a consistent user experience.
+
+8. **Display Format**: Enhanced the display format to include priority indicators [H]/[M]/[L] and tags in a tabular format for better readability.
